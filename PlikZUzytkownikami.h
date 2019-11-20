@@ -23,7 +23,7 @@ Uzytkownik pobierzDaneUzytkownika(string daneJednegoUzytkownikaOddzielonePionowy
 public:
     PlikZUzytkownikami();
     void dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik);
-    void wczytajUzytkownikowZPliku(vector <Uzytkownik> &uzytkownicy);
+    vector <Uzytkownik> wczytajUzytkownikowZPliku();
 
 };
 
