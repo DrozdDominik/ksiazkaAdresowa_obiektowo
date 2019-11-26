@@ -23,9 +23,14 @@ PlikZUzytkownikami plikZUzytkownikami;
 
 public:
     UzytkownikMenadzer(string nazwaPlikuZUzytkownikami) : plikZUzytkownikami(nazwaPlikuZUzytkownikami){};
+    void ustawIdZalogowanegoUzytkownika(int noweIdZalogowanegoUzytkownika);
+    int pobierzIdZalogowanegoUzytkownika();
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
     void wczytajUzytkownikowZPliku();
+    int logowanieUzytkownika();
+    void zmianaHaslaZalogowanegoUzytkownika();
+    int wylogowanieUzytkownika();
 
 };
 
