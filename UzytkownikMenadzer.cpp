@@ -11,11 +11,6 @@ void UzytkownikMenadzer::rejestracjaUzytkownika()
     system("pause");
 }
 
-void UzytkownikMenadzer::ustawIdZalogowanegoUzytkownika(int noweIdZalogowanegoUzytkownika)
-{
-    idZalogowanegoUzytkownika = noweIdZalogowanegoUzytkownika;
-}
-
 int UzytkownikMenadzer::pobierzIdZalogowanegoUzytkownika()
 {
     return idZalogowanegoUzytkownika;
@@ -75,11 +70,6 @@ void UzytkownikMenadzer::wypiszWszystkichUzytkownikow()
 }
 }
 
-void UzytkownikMenadzer::wczytajUzytkownikowZPliku()
-{
-  uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
-}
-
 int UzytkownikMenadzer::logowanieUzytkownika()
 {
     Uzytkownik uzytkownik;
@@ -101,7 +91,8 @@ int UzytkownikMenadzer::logowanieUzytkownika()
                 {
                     cout << endl << "Zalogowales sie." << endl << endl;
                     system("pause");
-                    return uzytkownicy[i].pobierzId();
+                    idZalogowanegoUzytkownika = uzytkownicy[i].pobierzId();
+                    return idZalogowanegoUzytkownika;
                 }
             }
             cout << "Wprowadzono 3 razy bledne haslo." << endl;
@@ -133,8 +124,16 @@ void UzytkownikMenadzer::zmianaHaslaZalogowanegoUzytkownika()
     plikZUzytkownikami.zapiszWszystkichUzytkownikowDoPliku(uzytkownicy);
 }
 
-int UzytkownikMenadzer::wylogowanieUzytkownika()
+void UzytkownikMenadzer::wylogowanieUzytkownika()
 {
-    cout << endl << "Wylogowales sie poprawnie." << endl << endl;
-    return 0;
+   idZalogowanegoUzytkownika = 0;
 }
+
+bool UzytkownikMenadzer::czyUzytkownikJestZalogowany()
+{
+    if(idZalogowanegoUzytkownika > 0)
+        return true;
+    else
+        return false;
+}
+

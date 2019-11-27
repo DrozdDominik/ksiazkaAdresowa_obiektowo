@@ -9,29 +9,32 @@
 #include <sstream>
 #include "Uzytkownik.h"
 #include "PlikZUzytkownikami.h"
+#include "Adresat.h"
 
 using namespace std;
 
 class UzytkownikMenadzer {
 int idZalogowanegoUzytkownika;
 vector <Uzytkownik> uzytkownicy;
+PlikZUzytkownikami plikZUzytkownikami;
 
 Uzytkownik podajDaneNowegoUzytkownika();
 int pobierzIdNowegoUzytkownika();
 bool czyIstniejeLogin(string login);
-PlikZUzytkownikami plikZUzytkownikami;
+
 
 public:
-    UzytkownikMenadzer(string nazwaPlikuZUzytkownikami) : plikZUzytkownikami(nazwaPlikuZUzytkownikami){};
-    void ustawIdZalogowanegoUzytkownika(int noweIdZalogowanegoUzytkownika);
+    UzytkownikMenadzer(string nazwaPlikuZUzytkownikami) : plikZUzytkownikami(nazwaPlikuZUzytkownikami){
+        idZalogowanegoUzytkownika = 0;
+        uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
+    };
     int pobierzIdZalogowanegoUzytkownika();
     void rejestracjaUzytkownika();
-    void wypiszWszystkichUzytkownikow();
-    void wczytajUzytkownikowZPliku();
     int logowanieUzytkownika();
     void zmianaHaslaZalogowanegoUzytkownika();
-    int wylogowanieUzytkownika();
-
+    void wylogowanieUzytkownika();
+    bool czyUzytkownikJestZalogowany();
+    void wypiszWszystkichUzytkownikow();
 };
 
 #endif
