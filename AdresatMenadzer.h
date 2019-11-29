@@ -21,6 +21,7 @@ Adresat podajDaneNowegoAdresata();
 void wyswietlDaneAdresata(Adresat adresat);
 int podajIdWybranegoAdresata();
 int podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(int idUsuwanegoAdresata, int idOstatniegoAdresata);
+char wybierzOpcjeZMenuEdycja();
 
 public:
     AdresatMenadzer(string nazwaPlikuZAdresatami, int idZalogowanegoUzytkownika)
@@ -31,7 +32,7 @@ public:
     void dodajAdresata();
     void wyswietlWszystkichAdresatow();
     int usunAdresata();
-
+    void edytujAdresata();
 };
 
 #endif
