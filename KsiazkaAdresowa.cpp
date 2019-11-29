@@ -69,6 +69,15 @@ void KsiazkaAdresowa::usunAdresata()
         }
 }
 
+void KsiazkaAdresowa::edytujAdresata()
+{
+    if(uzytkownikMenadzer.czyUzytkownikJestZalogowany())
+        {
+           adresatMenadzer->edytujAdresata();
+        }
+}
+
+
 char KsiazkaAdresowa::wybierzOpcjeZMenuGlownego()
 {
     char wybor;
@@ -108,3 +117,4 @@ char KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika()
 
     return wybor;
 }
+

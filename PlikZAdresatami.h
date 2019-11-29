@@ -26,6 +26,8 @@ class PlikZAdresatami
     int pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
     void usunPlik(string nazwaPlikuZRozszerzeniem);
     void zmienNazwePliku(string staraNazwa, string nowaNazwa);
+    void edytujAdresataWPliku(Adresat adresat, string liniaZDanymiAdresataOddzielonePionowymiKreskami);
+
     public:
     PlikZAdresatami(string nazwaPlikuZAdresatami)
     : NAZWA_PLIKU_Z_ADRESATAMI(nazwaPlikuZAdresatami), nazwaTymczasowegoPlikuZAdresatami("Adresaci_tymczasowo.txt")
@@ -39,6 +41,8 @@ class PlikZAdresatami
     void ustawIdOstatniegoAdresata(int noweIdOstatniegoUzytkownika);
     void usunWybranegoAdresataZPliku(int idUsunietegoAdresata);
     int pobierzZPlikuIdOstatniegoAdresata();
+    void zaktualizujDaneWybranegoAdresata(Adresat adresat);
+
 };
 
 
