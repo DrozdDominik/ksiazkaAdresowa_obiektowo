@@ -19,6 +19,8 @@ PlikZAdresatami plikZAdresatami;
 
 Adresat podajDaneNowegoAdresata();
 void wyswietlDaneAdresata(Adresat adresat);
+int podajIdWybranegoAdresata();
+int podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(int idUsuwanegoAdresata, int idOstatniegoAdresata);
 
 public:
     AdresatMenadzer(string nazwaPlikuZAdresatami, int idZalogowanegoUzytkownika)
@@ -28,6 +30,7 @@ public:
     };
     void dodajAdresata();
     void wyswietlWszystkichAdresatow();
+    int usunAdresata();
 
 };
 
