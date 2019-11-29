@@ -61,6 +61,14 @@ bool KsiazkaAdresowa::czyUzytkownikJestZalogowany()
 
 }
 
+void KsiazkaAdresowa::usunAdresata()
+{
+    if(uzytkownikMenadzer.czyUzytkownikJestZalogowany())
+        {
+           adresatMenadzer->usunAdresata();
+        }
+}
+
 char KsiazkaAdresowa::wybierzOpcjeZMenuGlownego()
 {
     char wybor;

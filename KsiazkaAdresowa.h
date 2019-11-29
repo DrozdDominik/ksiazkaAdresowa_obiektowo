@@ -33,6 +33,7 @@ class KsiazkaAdresowa{
      bool czyUzytkownikJestZalogowany();
      char wybierzOpcjeZMenuGlownego();
      char wybierzOpcjeZMenuUzytkownika();
+     void usunAdresata();
   };
 
 #endif
