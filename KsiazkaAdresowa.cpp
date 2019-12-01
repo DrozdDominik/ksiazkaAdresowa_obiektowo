@@ -77,6 +77,10 @@ void KsiazkaAdresowa::edytujAdresata()
         }
 }
 
+void KsiazkaAdresowa::wyszukajAdresatowPoImieniu()
+{
+    adresatMenadzer->wyszukajAdresatowPoImieniu();
+}
 
 char KsiazkaAdresowa::wybierzOpcjeZMenuGlownego()
 {

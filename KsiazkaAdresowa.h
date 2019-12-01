@@ -35,7 +35,7 @@ class KsiazkaAdresowa{
      char wybierzOpcjeZMenuUzytkownika();
      void usunAdresata();
      void edytujAdresata();
-
+     void wyszukajAdresatowPoImieniu();
   };
 
 #endif
