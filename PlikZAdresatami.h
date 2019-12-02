@@ -9,17 +9,17 @@
 #include <algorithm>
 #include "Adresat.h"
 #include "MetodyPomocnicze.h"
+#include "PlikTekstowy.h"
 
 using namespace std;
 
-class PlikZAdresatami
+class PlikZAdresatami: public PlikTekstowy
 {
     const string NAZWA_PLIKU_Z_ADRESATAMI;
     const string nazwaTymczasowegoPlikuZAdresatami;
     int idOstatniegoAdresata;
 
     string zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat);
-    bool czyPlikJestPusty(fstream &plikTekstowy);
     string pobierzLiczbe(string tekst, int pozycjaZnaku);
     Adresat pobierzDaneAdresata(string daneAdresataOddzielonePionowymiKreskami);
     int pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
@@ -29,8 +29,8 @@ class PlikZAdresatami
     void edytujAdresataWPliku(Adresat adresat, string liniaZDanymiAdresataOddzielonePionowymiKreskami);
 
     public:
-    PlikZAdresatami(string nazwaPlikuZAdresatami)
-    : NAZWA_PLIKU_Z_ADRESATAMI(nazwaPlikuZAdresatami), nazwaTymczasowegoPlikuZAdresatami("Adresaci_tymczasowo.txt")
+    PlikZAdresatami(string nazwaPliku) :
+        PlikTekstowy(nazwaPliku), nazwaTymczasowegoPlikuZAdresatami("Adresaci_tymczasowo.txt")
     {
         idOstatniegoAdresata = 0;
     };

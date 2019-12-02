@@ -7,7 +7,7 @@ int main()
 {
     char wybor;
     vector <Adresat> adresaci;
-    KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt", "Adresaci.txt");
+    KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt","Adresaci.txt");
 
    while (true)
     {
